@@ -35,6 +35,7 @@ SecurityFilterChain filterChain(HttpSecurity http) {
     .csrf(csrf -> csrf.disable())
     .authorizeHttpRequests(auth -> auth
         .requestMatchers("/auth/**").permitAll()
+        .requestMatchers("/trainers/**").permitAll() // ADD THIS
         .anyRequest().authenticated()
     )
     .formLogin(form -> form.disable())
